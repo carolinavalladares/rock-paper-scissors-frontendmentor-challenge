@@ -98,16 +98,15 @@ function App() {
           <button onClick={handleOpenModal} className="rules-btn">
             RULES
           </button>
+        </div>
+        <div className={`${"rulesModalOverlay"} ${modalOpen ? "open" : ""}`}>
+          <div className="rulesModal">
+            <button onClick={handleCloseModal} className="close-btn">
+              <img src="./images/icon-close.svg" />
+            </button>
+            <h2 className="rulesTitle">RULES</h2>
 
-          <div className={`${"rulesModalOverlay"} ${modalOpen ? "open" : ""}`}>
-            <div className="rulesModal">
-              <button onClick={handleCloseModal} className="close-btn">
-                <img src="./images/icon-close.svg" />
-              </button>
-              <h2 className="rulesTitle">RULES</h2>
-
-              <img src="./images/image-rules.svg" />
-            </div>
+            <img src="./images/image-rules.svg" />
           </div>
         </div>
       </main>

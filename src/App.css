@@ -463,4 +463,44 @@ main {
     border-radius: 10px;
     margin: 0 auto;
   }
+
+  .rulesModalOverlay {
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    position: absolute;
+    inset: 0;
+
+    z-index: 100;
+
+    display: none;
+  }
+
+  .rulesModal {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+
+    padding: 20px 20px 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+  }
+  .rulesTitle {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
