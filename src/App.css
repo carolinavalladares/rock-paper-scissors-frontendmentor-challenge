@@ -1,38 +1,337 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+#root {
+  width: 100%;
+}
+.attribution {
+  position: absolute;
+  bottom: 10px;
   text-align: center;
+  font-size: 12px;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+body {
+  height: 100vh;
+  background: radial-gradient(
+    circle,
+    hsl(214, 47%, 23%) 0%,
+    hsl(237, 49%, 15%) 100%
+  );
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+.App {
+  width: 100%;
+}
+main {
+  width: 100%;
+  padding: 36px 0;
+}
+/* Top Container */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.top-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: 500px;
+
+  margin: 0 auto;
+
+  border: 2px solid hsl(217, 16%, 45%);
+  padding: 16px;
+  border-radius: 15px;
+}
+.title {
+  max-width: 100px;
+  line-height: 1;
+  font-size: 36px;
+  color: #ffffff;
+}
+.score-wrapper {
+  background-color: #ffffff;
+  height: 120px;
+  width: 140px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-radius: 10px;
+}
+.score-wrapper span {
+  display: block;
+  font-size: 20px;
+  color: hsl(229, 64%, 46%);
+}
+.score-wrapper div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+  color: hsl(229, 25%, 31%);
 }
 
-.App-link {
-  color: #61dafb;
+/* Game */
+
+/* Game container */
+
+.game-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+
+  margin-top: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Options */
+.option-container {
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.option-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 7px;
+
+  border-radius: 50%;
+}
+
+/* Handle different colors*/
+
+.option-container.rock {
+  background-color: hsla(349, 71%, 52%, 0.5);
+  bottom: 0;
+}
+.option-container.rock::before {
+  background: linear-gradient(to top, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+}
+.option-container.paper {
+  background-color: hsla(230, 89%, 62%, 0.5);
+  top: 0;
+  left: -50px;
+  transform: translateY(-50%);
+}
+.option-container.paper::before {
+  background: linear-gradient(to top, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+}
+.option-container.scissors {
+  background-color: hsla(39, 89%, 49%, 0.5);
+
+  top: 0;
+  right: -50px;
+  transform: translateY(-50%);
+}
+.option-container.scissors::before {
+  background: linear-gradient(to top, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+}
+
+.option-wrapper {
+  background-color: #bbb;
+
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  position: relative;
+
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.option-wrapper img {
+  z-index: 2;
+  width: 50%;
+}
+
+.option-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background-color: white;
+  top: 5px;
+
+  z-index: 1;
+  border-radius: 50%;
+}
+
+/* Handle options empty state */
+
+.option-container.empty {
+  background-color: hsla(229, 25%, 31%, 0.7);
+}
+
+.option-wrapper.empty {
+  display: none;
+}
+
+.step-2 .option-container {
+  position: relative;
+  transform: none;
+  left: auto;
+  right: auto;
+
+  cursor: auto;
+}
+
+/* Step 1 */
+.step-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 90px;
+}
+/* Step 2 */
+.step-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+}
+
+.step-two-title {
+  color: #ffffff;
+  margin-bottom: 30px;
+  text-align: center;
+
+  width: 100%;
+}
+
+.payersChoiceWrapper,
+.compChoiceWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Results */
+
+.results-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.results-wrapper h2 {
+  font-size: 36px;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.results-wrapper button {
+  width: 100%;
+  max-width: 200px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  border-radius: 10px;
+  border: 0;
+  outline: 0;
+  color: hsl(229, 25%, 31%);
+  cursor: pointer;
+}
+.results-wrapper button:hover {
+  color: hsl(349, 70%, 56%);
+}
+
+.rulesBtnWrapper {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.rules-btn {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  height: 42px;
+  width: 130px;
+  border-radius: 10px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+.rulesModalOverlay {
+  background-color: transparent;
+  position: fixed;
+  inset: 0;
+
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.rulesModalOverlay.open {
+  display: flex;
+}
+
+.rulesModal {
+  position: relative;
+  background-color: #ffffff;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 15px;
+  padding: 20px 20px 40px;
+}
+
+.rulesTitle {
+  margin-bottom: 50px;
+  font-size: 36px;
+  color: hsl(229, 25%, 31%);
+}
+
+.rulesModal img {
+  display: block;
+  margin: 0 auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  border: 0;
+  width: fit-content;
+  height: fit-content;
+  background-color: transparent;
+  cursor: pointer;
 }
