@@ -116,9 +116,14 @@ function App() {
       <div className="attribution">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+          {" "}
           Frontend Mentor
         </a>
-        . Coded by <a href="/">Carolina Valladares</a>.
+        . Coded by{" "}
+        <a href="https://github.com/carolinavalladares" target="_blank">
+          Carolina Valladares
+        </a>
+        .
       </div>
     </div>
   );

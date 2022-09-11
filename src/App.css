@@ -15,6 +15,10 @@
   text-align: center;
   font-size: 12px;
   width: 100%;
+  color: hsl(217, 16%, 45%);
+}
+.attribution a {
+  color: hsl(229, 25%, 31%);
 }
 
 body {
@@ -125,14 +129,14 @@ main {
 /* Handle different colors*/
 
 .option-container.rock {
-  background-color: hsla(349, 71%, 52%, 0.5);
+  background-color: hsl(349, 66%, 44%);
   bottom: 0;
 }
 .option-container.rock::before {
   background: linear-gradient(to top, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
 }
 .option-container.paper {
-  background-color: hsla(230, 89%, 62%, 0.5);
+  background-color: hsl(230, 78%, 51%);
   top: 0;
   left: -50px;
   transform: translateY(-50%);
@@ -141,7 +145,7 @@ main {
   background: linear-gradient(to top, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
 }
 .option-container.scissors {
-  background-color: hsla(39, 89%, 49%, 0.5);
+  background-color: hsl(39, 88%, 42%);
 
   top: 0;
   right: -50px;
@@ -334,4 +338,129 @@ main {
   height: fit-content;
   background-color: transparent;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1025px) {
+  main {
+    width: 100%;
+  }
+  .triangleImg {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .top-container {
+    width: auto;
+  }
+
+  .option-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .option-wrapper {
+    width: 100px;
+    height: 100px;
+
+    margin-bottom: 5px;
+  }
+
+  .option-container.rock {
+    bottom: 0;
+  }
+
+  .option-container.paper {
+    top: 0;
+    left: -20px;
+  }
+
+  .option-container.scissors {
+    top: 0;
+    right: -20px;
+  }
+
+  .results-wrapper {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+
+  .results-wrapper h2 {
+    font-size: 24px;
+  }
+  .results-wrapper button {
+    font-size: 18px;
+    max-width: 250px;
+    width: 100%;
+  }
+
+  .payersChoiceWrapper,
+  .compChoiceWrapper {
+    flex: 1;
+  }
+
+  .step-2 .option-container.paper {
+    top: 0;
+    left: auto;
+  }
+
+  .step-2 .option-container.scissors {
+    top: 0;
+    right: auto;
+  }
+  .step-two-title {
+    font-size: 18px;
+  }
+  .title {
+    max-width: 100px;
+    line-height: 1;
+    font-size: 24px;
+    color: #ffffff;
+  }
+  .score-wrapper {
+    height: 80px;
+    width: 100px;
+
+    border-radius: 10px;
+  }
+  .score-wrapper span {
+    display: block;
+    font-size: 16px;
+    color: hsl(229, 64%, 46%);
+  }
+  .score-wrapper div {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
+    color: hsl(229, 25%, 31%);
+  }
+  .top-container {
+    width: 100%;
+    max-width: 300px;
+
+    margin: 0 auto;
+
+    border: 2px solid hsl(217, 16%, 45%);
+    padding: 16px;
+    border-radius: 15px;
+  }
+
+  .rulesBtnWrapper {
+    position: absolute;
+    bottom: 40px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 100%;
+  }
+
+  .rules-btn {
+    display: block;
+    height: 42px;
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    margin: 0 auto;
+  }
 }
